@@ -26,7 +26,9 @@ const typesRoutes = "https://back-pokemons-production.up.railway.app/types/";
 //? Actions creators;
 export const getAllPokemons = () => async (dispatch) => {
     try {
-        const response = await axios.get(pokemonsRoutes);
+        const response = await axios.get(
+            "https://back-pokemons-production.up.railway.app/pokemons/"
+        );
         dispatch({ type: GET_ALL_POKEMONS, payload: response.data });
     } catch (error) {
         return alert(error.message);
@@ -53,7 +55,9 @@ export const getPokemonByName = (name) => async (dispatch) => {
 
 export const getAllTypes = () => async (dispatch) => {
     try {
-        const response = await axios.get(typesRoutes);
+        const response = await axios.get(
+            "https://back-pokemons-production.up.railway.app/types/"
+        );
         dispatch({ type: GET_ALL_TYPES, payload: response.data });
     } catch (error) {
         return alert(error.message);
