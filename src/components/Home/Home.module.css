@@ -1,0 +1,12 @@
+.home{
+    min-height: 31rem;
+    text-align: center;
+    background-image: url("https://images3.alphacoders.com/844/thumbbig-84405.webp");
+    background-size: cover;
+}
+
+
+.navCards{
+    display: flex;
+    flex-direction: column;
+}
