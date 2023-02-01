@@ -86,7 +86,7 @@ const Form = () => {
             />
             <div className={styles.buttons}>
                 <Link to="/home">
-                <button onClick={toBack}>Back</button>
+                    <button onClick={toBack}>Back</button>
                 </Link>
                 <button onClick={toBack}>New</button>
             </div>
@@ -204,7 +204,8 @@ const Form = () => {
                 </form>
                 <img
                     src={
-                        newPokemon.image || "https://i.ibb.co/zPfjMYc/Pokemon-desconocido.jpg"
+                        newPokemon.image ||
+                        "https://i.postimg.cc/Bb6Vrv5R/Pokemon-desconocido.jpg"
                     }
                     alt="Created"
                 />
