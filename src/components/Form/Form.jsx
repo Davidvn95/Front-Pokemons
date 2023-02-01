@@ -27,6 +27,7 @@ const Form = () => {
         type: [],
     });
 
+    const regexName = /^[a-zA-ZÀ-ÿ]{4,10}$/;
 
     const toBack = () => {
         dispatch(separateLocations());
@@ -59,11 +60,7 @@ const Form = () => {
 
     const submitFunction = (event) => {
         event.preventDefault();
-        if (
-            newPokemon.name?.length > 0 &&
-            newPokemon.name?.length <= 10 &&
-            newPokemon.type?.length
-        ) {
+        if (regexName.test(newPokemon.name) && newPokemon.type?.length) {
             const body = {};
             for (const prop in newPokemon) {
                 if (newPokemon[prop] !== "") body[prop] = newPokemon[prop];
@@ -71,8 +68,6 @@ const Form = () => {
             dispatch(createPokemon(body));
             dispatch(getAllPokemons());
             dispatch(getAllTypes());
-        } else if (newPokemon.name?.length > 10) {
-            alert("length name's must be less 10");
         } else alert("Name and Type are required");
     };
 
@@ -107,8 +102,11 @@ const Form = () => {
                                 placeholder="Enter a Name"
                                 autoComplete="off"
                             />
-                            {newPokemon.name?.length > 10 && (
-                                <span>*Enter 10 characters or less*</span>
+                            {newPokemon.name !== "" && !regexName.test(newPokemon.name) && (
+                                <span>
+                                    *Name must be between 4 and 10 characters and not include
+                                    numbers, spaces or special characters*
+                                </span>
                             )}
                         </div>
                     </div>
@@ -192,7 +190,7 @@ const Form = () => {
                         </select>
                     </div>
                     <div className={styles.info}>
-                        <label htmlFor="type2">Type2 (optinal): </label>
+                        <label htmlFor="type2">Type2 (optional): </label>
                         <select name="type2" onChange={handleForm}>
                             <option value="null">Select a type</option>
                             {types.map((typ, index) => (
