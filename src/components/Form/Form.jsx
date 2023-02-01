@@ -27,7 +27,7 @@ const Form = () => {
         type: [],
     });
 
-    const regexName = /^[a-zA-ZÀ-ÿ]{4,10}$/;
+    const regexName = /^[a-zA-ZÀ-ÿ]{4,12}$/;
 
     const toBack = () => {
         dispatch(separateLocations());
