@@ -104,7 +104,7 @@ const Form = () => {
                             />
                             {newPokemon.name !== "" && !regexName.test(newPokemon.name) && (
                                 <span>
-                                    *Name must be between 4 and 10 characters and not include
+                                    *Name must be between 4 and 12 characters and not include
                                     numbers, spaces or special characters*
                                 </span>
                             )}
