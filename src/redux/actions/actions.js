@@ -19,8 +19,8 @@ export const CLEAN_FORM = "CLEAN_FORM"; // Limpia el estado de created para pode
 
 // *****************************************************************************
 //? Rutas Back-End;
-const pokemonsRoutes = "https://back-pokemons-production.up.railway.app/pokemons/";
-const typesRoutes = "https://back-pokemons-production.up.railway.app/types/";
+const pokemonsRoutes = "https://localhost:3001/pokemons/";
+const typesRoutes = "https://localhost:3001/types/";
 
 // *****************************************************************************
 //? Actions creators;
