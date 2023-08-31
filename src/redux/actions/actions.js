@@ -19,8 +19,8 @@ export const CLEAN_FORM = "CLEAN_FORM"; // Limpia el estado de created para pode
 
 // *****************************************************************************
 //? Rutas Back-End;
-const pokemonsRoutes = "https://api-pokemon-shht.onrender.com/pokemons/";
-const typesRoutes = "https://api-pokemon-shht.onrender.com/types/";
+const pokemonsRoutes = "https://back-pokemons-g3j4-dev.fl0.io/pokemons/";
+const typesRoutes = "https://back-pokemons-g3j4-dev.fl0.io/types/";
 
 // *****************************************************************************
 //? Actions creators;
