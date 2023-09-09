@@ -9,7 +9,7 @@ const Card = (props) => {
             <div className={styles.superior}>
                 <span>{props.name[0]?.toUpperCase() + props.name?.slice(1)}</span>
             </div>
-            <Link to={`/home/${props.id}`}>
+            <Link to={`/pokemons/${props.id}`}>
                 <div className={styles.containerImg}>
                     <img className={styles.image} src={props.image} alt={props.name} />
                 </div>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
-import { getPokemonDetail, separateLocations } from '../../../vite-pokemon/src/redux/actions/actions'
+import { getPokemonDetail, separateLocations } from '../../redux/actions/actions'
 import styles from './PokemonsDetail.module.css'
-import icons from '../../../vite-pokemon/src/assets/images/IconsType'
+import icons from '../../assets/images/IconsType'
 
 const PokemonsDetail = () => {
     const { id } = useParams()

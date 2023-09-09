@@ -6,8 +6,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    background-image: url("https://images3.alphacoders.com/844/thumbbig-84405.webp");
-    background-size: cover;
+    background-color: rgb(140, 142, 145);
     padding-bottom: 0;
 }
 

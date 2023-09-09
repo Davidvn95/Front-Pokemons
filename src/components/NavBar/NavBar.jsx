@@ -18,7 +18,7 @@ const NavBar = ({setSearchStatus}) => {
                 <Link to="/about">
                     <button>About</button>
                 </Link>
-                <Link to="/home">
+                <Link to="/pokemons">
                     <button onClick={recharge}>Home</button>
                 </Link>
                 <Link to="/form">
