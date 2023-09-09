@@ -6,7 +6,7 @@ import Paginations from "../Paginations/Paginations";
 import { useSelector } from "react-redux";
 // import { getAllPokemons, getAllTypes } from "../../redux/actions/actions";
 
-const Home = () => {
+const Home = ({searchStatus, setSearchStatus}) => {
     // const pokemons = useSelector(state=>state.pokemons)
     const render = useSelector(state => state.render)
     const [pagina, setPagina] = useState(1);
@@ -21,6 +21,7 @@ const Home = () => {
             <div className={styles.lateral}>
                 <Filters/>
             </div>
+            {searchStatus && <button onClick={()=>setSearchStatus(false)}>Back</button>}
             <PokemonsCards pagina={pagina} porPagina={porPagina}/>
             <Paginations pagina={pagina} setPagina={setPagina} maximo={maximo} />
         </section>

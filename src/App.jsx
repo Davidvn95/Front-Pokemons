@@ -9,7 +9,7 @@ import About from './components/About/About'
 import Form from './components/Form/Form'
 import { useDispatch } from 'react-redux'
 import { getAllPokemons, getAllTypes } from './redux/actions/actions'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
 
@@ -17,19 +17,21 @@ function App() {
 
   const dispatch = useDispatch()
 
+  const [searchStatus, setSearchStatus] = useState(false)
+
   useEffect(() => {
-    dispatch(getAllPokemons())
-    dispatch(getAllTypes())
-  },[])
+      dispatch(getAllPokemons())
+      dispatch(getAllTypes())
+  }, [])
 
   return (
     <main>
       {location.pathname !== '/' && <Header />}
-      {location.pathname !== '/' && <NavBar />}
+      {location.pathname !== '/' && <NavBar setSearchStatus={setSearchStatus} />}
 
       <Routes>
         <Route exact path='/' element={<LandingPage />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/home' element={<Home searchStatus={searchStatus} setSearchStatus={setSearchStatus} />} />
         <Route path='/about' element={<About />} />
         <Route path='/form' element={<Form />} />
       </Routes>
