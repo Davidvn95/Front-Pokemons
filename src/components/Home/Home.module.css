@@ -1,12 +1,16 @@
 .home{
     min-height: 31rem;
-    text-align: center;
-    background-image: url("https://images3.alphacoders.com/844/thumbbig-84405.webp");
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(140, 142, 145);
+    position: relative;
 }
 
 
-.navCards{
+.lateral{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: .5rem;
 }

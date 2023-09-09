@@ -1,30 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { separateLocations } from "../../redux/actions/actions";
-import Card from "../Card/Card";
-import styles from "./PokemonsCards.module.css";
-
-const PokemonsCards = (props) => {
-    const all = useSelector(state=>state.all)
-    const render = useSelector(state => state.render);
-    const pokemons = useSelector(state=>state.pokemons)
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { separateLocations } from '../../redux/actions/actions'
+import Card from '../Card/Card'
+import styles from './PokemonsCards.module.css'
+// eslint-disable-next-line
+const PokemonsCards = ({ pagina, porPagina }) => {
+    const all = useSelector((state) => state.all)
+    const render = useSelector((state) => state.render)
+    const pokemons = useSelector((state) => state.pokemons)
     const dispatch = useDispatch()
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (pokemons.length) setLoading(false);
-        if (!all.length) dispatch(separateLocations());
+        if (pokemons.length) setLoading(false)
+        if (!all.length) dispatch(separateLocations())
         // eslint-disable-next-line
-    },[pokemons]);
+    }, [pokemons])
 
     return !loading ? (
         <div className={styles.cards}>
             {render
-                .slice(
-                    (props.pagina - 1) * props.porPagina,
-                    (props.pagina - 1) * props.porPagina + props.porPagina
-                )
+                .slice((pagina - 1) * porPagina, (pagina - 1) * porPagina + porPagina)
                 .map((pkm, index) => (
                     <Card
                         id={pkm.id}
@@ -42,7 +39,7 @@ const PokemonsCards = (props) => {
                 alt="Loading"
             />
         </div>
-    );
-};
+    )
+}
 
-export default PokemonsCards;
+export default PokemonsCards

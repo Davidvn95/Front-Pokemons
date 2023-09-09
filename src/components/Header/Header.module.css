@@ -1,39 +1,19 @@
 .container{
-    background-image: url("https://cdn.pixabay.com/photo/2020/06/24/10/14/night-sky-5335582_960_720.jpg");
-    height: 13rem;
+    background-image: url('../../assets/images/fondo-header.jpg');
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-bottom: .1rem solid rgb(255, 123, 0);
-    border-top: .1rem solid rgb(255, 123, 0);
+    padding: .5rem 0;
 }
 
 .container h1{
-    color: yellow;
-    text-shadow: .3rem .3rem 0 lightyellow;
-    font-family: Pokemon Solid;
+    color: rgb(230, 230, 0);
+    text-shadow: .3rem .1rem 0 lightyellow;
     font-size: 5rem;
-    letter-spacing: 0.3rem;
-    margin-top: -5rem;
-    margin-bottom: -1rem;
+    letter-spacing: 0.2rem;
+    line-height: 0;
 }
 
-.buttons{
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.buttons button{
-    width: 9rem;
-    font-size: larger;
-    font-weight: bold;
-    font-family: MV Boli;
-    letter-spacing: .2rem;
-    background-color: rgb(255, 123, 0);
-    border: 0;
-    border-radius: 2rem;
-}
 

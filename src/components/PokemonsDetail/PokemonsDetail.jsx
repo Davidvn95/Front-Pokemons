@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
-import { getPokemonDetail, separateLocations } from "../../redux/actions/actions";
-import styles from "./PokemonsDetail.module.css";
-import icons from "../../images/IconsType";
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom'
+import { getPokemonDetail, separateLocations } from '../../../vite-pokemon/src/redux/actions/actions'
+import styles from './PokemonsDetail.module.css'
+import icons from '../../../vite-pokemon/src/assets/images/IconsType'
 
 const PokemonsDetail = () => {
-    const { id } = useParams();
-    const detail = useSelector((state) => state.detail);
-    const dispatch = useDispatch();
+    const { id } = useParams()
+    const detail = useSelector((state) => state.detail)
+    const dispatch = useDispatch()
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true)
     const toBack = () => {
         dispatch(separateLocations())
     }
 
     useEffect(() => {
         if (!Object.keys(detail).length || detail.id?.toString() !== id.toString())
-            dispatch(getPokemonDetail(id));
+            dispatch(getPokemonDetail(id))
         if (detail.id && detail.id?.toString() === id.toString()) {
-            setLoading(false);
+            setLoading(false)
         }
-    }, [detail,id, dispatch]);
+    }, [detail, id, dispatch])
 
     return !loading ? (
         <div className={styles.container}>
@@ -59,14 +59,14 @@ const PokemonsDetail = () => {
                 </div>
                 <div className={styles.types}>
                     {detail.type
-                        ? detail.type.map((ty) => (
-                              <div>
+                        ? detail.type.map((ty, index) => (
+                              <div key={index}>
                                   <img className={styles.ico} src={icons[ty]} alt={ty} />
                                   <span>{`${ty[0].toUpperCase()}${ty.slice(1)}`}</span>
                               </div>
                           ))
-                        : detail.types.map((ty) => (
-                              <div>
+                        : detail.types.map((ty, index) => (
+                              <div key={index}>
                                   <img className={styles.ico} src={icons[ty]} alt={ty} />
                                   <span>{`${ty[0].toUpperCase()}${ty.slice(1)}`}</span>
                               </div>
@@ -81,7 +81,7 @@ const PokemonsDetail = () => {
                 alt="Loading"
             />
         </div>
-    );
-};
+    )
+}
 
-export default PokemonsDetail;
+export default PokemonsDetail

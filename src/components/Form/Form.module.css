@@ -6,8 +6,7 @@
     align-items: center;
     padding-bottom: 2rem;
     font-family: MV Boli;
-    background-image: url("https://images3.alphacoders.com/844/thumbbig-84405.webp");
-    background-size: cover;
+    background-color: rgb(140, 142, 145);
 }
 
 .container h2 {
@@ -82,11 +81,11 @@
     gap: 2rem;
     padding: 2rem;
     margin: auto;
-    background-image: url("https://images3.alphacoders.com/844/thumbbig-84405.webp");
+    background-image: url('https://images3.alphacoders.com/844/thumbbig-84405.webp');
     background-size: cover;
 }
 
-.buttons{
+.buttons {
     display: flex;
     flex-direction: row;
     gap: 1rem;

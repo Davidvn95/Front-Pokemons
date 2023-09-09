@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: row;
     text-align: center;
+    position: absolute;
+    bottom: 1rem;
 }
 
 .container {
@@ -12,22 +14,21 @@
     flex-direction: row;
     gap: 2rem;
     height: 2rem;
+    align-items: center;
 }
 
 .container input {
     width: 3.5rem;
     text-align: center;
-    font-family: MV Boli;
     font-weight: bolder;
     border: 0.15rem solid rgb(155, 101, 0);
     border-radius: 0.5rem;
 }
 
 .container span {
-    font-family: MV Boli;
     font-size: larger;
     font-weight: bolder;
-    color: antiquewhite;
+    color: aliceblue;
 }
 
 .classbutton {
@@ -39,11 +40,16 @@
     width: 3rem;
     height: 3rem;
     margin-top: -0.5rem;
-    transform: rotateZ(180deg);
+    transform: rotateZ(90deg);
+    background-color: aliceblue;
+    border-radius: 100%;
 }
 
 .next {
     width: 3rem;
     height: 3rem;
     margin-top: -0.5rem;
+    transform: rotateZ(-90deg);
+    background-color: aliceblue;
+    border-radius: 100%;
 }

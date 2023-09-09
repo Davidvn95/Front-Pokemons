@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+// import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-    createPokemon,
-    getAllPokemons,
-    getAllTypes,
-    separateLocations,
-} from "../../redux/actions/actions";
-import Card from "../Card/Card";
+// import {
+//     createPokemon,
+//     getAllPokemons,
+//     getAllTypes,
+//     separateLocations,
+// } from "../../redux/actions/actions";
+// import Card from "../Card/Card";
 import styles from "./Form.module.css";
 
 const Form = () => {
-    const created = useSelector((state) => state.created);
-    const types = useSelector((state) => state.types);
-    const dispatch = useDispatch();
+    // const created = useSelector((state) => state.created);
+    const created = {id:false};
+    // const types = useSelector((state) => state.types);
+    // const dispatch = useDispatch();
 
     const [newPokemon, setnewPokemon] = useState({
         name: "",
@@ -30,7 +31,7 @@ const Form = () => {
     const regexName = /^[a-zA-ZÀ-ÿ]{4,12}$/;
 
     const toBack = () => {
-        dispatch(separateLocations());
+        // dispatch(separateLocations());
     };
 
     const handleForm = (event) => {
@@ -65,20 +66,20 @@ const Form = () => {
             for (const prop in newPokemon) {
                 if (newPokemon[prop] !== "") body[prop] = newPokemon[prop];
             }
-            dispatch(createPokemon(body));
-            dispatch(getAllPokemons());
-            dispatch(getAllTypes());
+            // dispatch(createPokemon(body));
+            // dispatch(getAllPokemons());
+            // dispatch(getAllTypes());
         } else alert("Name and Type are required");
     };
 
     return created.id ? (
         <div className={styles.cards}>
-            <Card
+            {/* <Card
                 id={created.id}
                 name={created.name}
                 image={created.image}
                 type={created.type ? created.type : created.types}
-            />
+            /> */}
             <div className={styles.buttons}>
                 <Link to="/home">
                     <button onClick={toBack}>Back</button>
@@ -184,18 +185,18 @@ const Form = () => {
                         <label htmlFor="type">Type*: </label>
                         <select name="type" onChange={handleForm}>
                             <option>Select a type</option>
-                            {types.map((typ, index) => (
+                            {/* {types.map((typ, index) => (
                                 <option key={index}>{typ.name}</option>
-                            ))}
+                            ))} */}
                         </select>
                     </div>
                     <div className={styles.info}>
                         <label htmlFor="type2">Type2 (optional): </label>
                         <select name="type2" onChange={handleForm}>
                             <option value="null">Select a type</option>
-                            {types.map((typ, index) => (
+                            {/* {types.map((typ, index) => (
                                 <option key={index}>{typ.name}</option>
-                            ))}
+                            ))} */}
                         </select>
                     </div>
                     <button onClick={submitFunction}>Submit</button>

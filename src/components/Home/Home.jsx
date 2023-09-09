@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./Home.module.css";
-import NavBar from "../NavBar/NavBar";
+import Filters from "../Filters/Filters";
 import PokemonsCards from "../PokemonsCards/PokemonsCards";
 import Paginations from "../Paginations/Paginations";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllPokemons, getAllTypes } from "../../redux/actions/actions";
+import { useSelector } from "react-redux";
+// import { getAllPokemons, getAllTypes } from "../../redux/actions/actions";
 
 const Home = () => {
-    const pokemons = useSelector(state=>state.pokemons)
+    // const pokemons = useSelector(state=>state.pokemons)
     const render = useSelector(state => state.render)
-    const dispatch = useDispatch()
     const [pagina, setPagina] = useState(1);
 
-    useEffect(()=> {
-        if (!pokemons.length) {
-            dispatch(getAllPokemons());
-            dispatch(getAllTypes())
-        }
-    })
+    const [porPagina] = useState(8);
 
-    const porPagina = 8;
-
-    const maximo = Math.ceil(render.length / porPagina);
+    const [maximo] = useState(Math.ceil(render.length / porPagina));
 
 
     return (
-        <div className={styles.home}>
-            <NavBar />
-            <Paginations pagina={pagina} setPagina={setPagina} maximo={maximo} />
+        <section className={styles.home}>
+            <div className={styles.lateral}>
+                <Filters/>
+            </div>
             <PokemonsCards pagina={pagina} porPagina={porPagina}/>
-        </div>
+            <Paginations pagina={pagina} setPagina={setPagina} maximo={maximo} />
+        </section>
     );
 };
 

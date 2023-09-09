@@ -1,8 +1,6 @@
 .search {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
-    height: fit-content;
 }
 
 .search input {

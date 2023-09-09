@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Paginations.module.css";
 
 
@@ -51,32 +51,33 @@ const Paginations = ({ pagina, setPagina, maximo }) => {
     };
 
     return (
-        <div className={styles.pag}>
+        <section className={styles.pag}>
             <div className={styles.container}>
                 <button className={styles.classbutton} onClick={previousFunction}>
                     <img
                         className={styles.previous}
-                        src="https://cdn-icons-png.flaticon.com/512/6276/6276701.png"
+                        src="https://cdn-icons-png.flaticon.com/128/4686/4686497.png"
                         alt="previous"
                     />
                 </button>
-                <input type="text"
+                <input
+                    type="text"
                     onKeyUp={handleKeyUp}
-                    onChange = {handleChage}
+                    onChange={handleChage}
                     placeholder={pagina}
-                    value = {valueInput}
+                    value={valueInput}
                 />
                 <span>{`de ${maximo}`}</span>
                 <button className={styles.classbutton} onClick={nextFunction}>
                     <img
                         className={styles.next}
-                        src="https://cdn-icons-png.flaticon.com/512/6276/6276701.png"
+                        src="https://cdn-icons-png.flaticon.com/128/4686/4686497.png"
                         alt="next"
                     />
                 </button>
             </div>
-        </div>
-    );
+        </section>
+    )
 };
 
 export default Paginations;

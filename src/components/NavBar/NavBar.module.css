@@ -1,20 +1,17 @@
 .contentNav{
     width: 100%;
-    height: 100%;
-    padding: 1rem 1rem 1rem 0;
+    padding: .5rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    color: rgb(17, 179, 3);
-    font-weight: bolder;
-    background-color: rgba(255, 228, 196, 0.678);
-    font-size: x-large;
-    font-family: MV Boli;
+    background-color: rgb(247, 230, 0);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.container{
+.contentNav nav{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -22,9 +19,9 @@
 }
 
 .contentNav button{
-    border: .2rem solid rgb(129, 84, 1);
     border-radius: 1rem;
-    font-family: MV Boli;
-    font-weight: bolder;
+    font-weight: bold;
     font-size:medium;
+    letter-spacing: .02rem;
+    padding: 0.2rem 1rem;
 }

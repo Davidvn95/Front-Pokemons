@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import icons from "../../images/IconsType";
-import styles from "./Card.module.css";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import icons from '../../assets/images/IconsType'
+import styles from './Card.module.css'
 
 const Card = (props) => {
     return (
@@ -15,18 +15,18 @@ const Card = (props) => {
                 </div>
             </Link>
             <div className={styles.inferior}>
-                {props.type?.map((ty,index) => {
+                {props.type?.map((ty, index) => {
                     return (
-                        <div key={index} >
+                        <div key={index}>
                             <img className={styles.ico} src={icons[ty]} alt={ty} key={index} />
                             <span>{`${ty[0].toUpperCase()}${ty.slice(1)}`}</span>
                         </div>
-                    );
+                    )
                 })}
             </div>
         </div>
         // </Link>
-    );
-};
+    )
+}
 
-export default Card;
+export default Card
