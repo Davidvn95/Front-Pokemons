@@ -19,7 +19,7 @@ const LandingPage = () => {
             </video>
             <div className={styles.infoPage}>
                 <span>Welcome to POKEDEX!</span>
-                <Link to='/home'>
+                <Link to='/pokemons'>
                     <button onClick={separate}>START</button>
                 </Link>
             </div>

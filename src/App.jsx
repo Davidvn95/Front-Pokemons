@@ -2,7 +2,7 @@ import LandingPage from './components/LandingPage/LandingPage'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
-import { Routes, Route, useLocation, useHistory } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
 import About from './components/About/About'
@@ -15,7 +15,7 @@ import PokemonsDetail from './components/PokemonsDetail/PokemonsDetail'
 function App() {
 
   const location = useLocation()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const dispatch = useDispatch()
 
@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     if (location.pathname === '/home') {
-      history.push('/pokemons')
+      navigate('/pokemons')
     }
   }, [location])
 
